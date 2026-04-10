@@ -1,6 +1,5 @@
 import pandas as pd
-import datetime as date
-import openpyxl
+from datetime import datetime
 
 
 # 1. READ THE TIMETABLE
@@ -155,7 +154,7 @@ def get_day_type(date_str):
     Returns day type (weekday/weekend/holiday) and study sessions with timings.
     """
     try:
-        from datetime import datetime
+        
         date = datetime.strptime(date_str, "%d-%m-%Y").date()
         holidays = get_holidays()
 
