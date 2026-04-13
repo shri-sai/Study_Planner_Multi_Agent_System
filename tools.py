@@ -163,7 +163,7 @@ def get_day_type(date_str):
             day_type = "holiday"
 
         # Check if weekend
-        elif date.weekday() >= 5:  # 5 = Saturday, 6 = Sunday
+        elif date.weekday() == 6:  # 6 = Sunday
             day_type = "weekend"
 
         else:
@@ -175,10 +175,10 @@ def get_day_type(date_str):
                 "type": day_type,
                 "hours": 4,
                 "sessions": [
-                    {"session": 1, "start_time": "11:00", "end_time": "12:00"},
-                    {"session": 2, "start_time": "12:30", "end_time": "13:30"},
-                    {"session": 3, "start_time": "18:00", "end_time": "19:00"},
-                    {"session": 4, "start_time": "19:30", "end_time": "20:30"},
+                    {"session": 1, "start_time": "11:00", "end_time": "12:10"},
+                    {"session": 2, "start_time": "12:20", "end_time": "13:30"},
+                    {"session": 3, "start_time": "18:00", "end_time": "19:10"},
+                    {"session": 4, "start_time": "19:20", "end_time": "20:30"},
                 ]
             }
         else:
@@ -186,8 +186,8 @@ def get_day_type(date_str):
                 "type": day_type,
                 "hours": 2,
                 "sessions": [
-                    {"session": 1, "start_time": "18:00", "end_time": "19:00"},
-                    {"session": 2, "start_time": "19:30", "end_time": "20:30"},
+                    {"session": 1, "start_time": "18:00", "end_time": "19:10"},
+                    {"session": 2, "start_time": "19:20", "end_time": "20:30"},
                 ]
             }
 
@@ -213,10 +213,6 @@ def save_output_plan(plan_data, file_path):
 
     except Exception as e:
         print(f"Error saving study plan: {e}")
-
-
-
-
 
 
 
